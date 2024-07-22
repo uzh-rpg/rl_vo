@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.0)
+
+project(SVO-LIB)
+
+add_subdirectory(svo_env)
+add_subdirectory(svo)
+add_subdirectory(svo_common)
+add_subdirectory(svo_img_align)
+add_subdirectory(svo_tracker)
+add_subdirectory(svo_direct)
+add_subdirectory(vikit/vikit_common)
+add_subdirectory(vikit/vikit_cameras)
+add_subdirectory(vikit/vikit_solver)
+add_subdirectory(minkindr/minkindr)
+add_subdirectory(fast_neon)
+add_subdirectory(rpg_common)
+add_subdirectory(opengv)
+add_subdirectory(glog)
+add_subdirectory(gflags)
+

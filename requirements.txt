@@ -1,0 +1,13 @@
+ipython
+numpy
+PyYAML
+gnupg
+opencv-python
+stable-baselines3
+hydra-core
+wandb
+tqdm
+scipy
+plotly
+SciencePlots
+pycryptodomex

@@ -1,0 +1,25 @@
+defaults:
+  - hurti_config
+  - _self_
+
+eval_log: '/logs/log_voRL/playground/${now:%Y-%m-%d_%H-%M-%S}'
+weight_path : '/logs/log_voRL/training/<path_to_checkpoint_file>'
+use_rl_actions: False
+max_eval_steps: -1  # -1 if maximum length of trajectories should be taken
+visualize_trajs: False
+use_gt_initialization: False
+vo_algorithm: "SVO"
+test_seq_ids: -1 # -1 for all test sequences
+
+# Uncomment the wanted dataset and set the correct paths
+#dataset: 'euroc'
+#dataset_dir: "/datasets/EuRoC"
+#svo_params_file: "<path>/svo-lib/svo_env/param/euroc.yaml"
+#svo_calib_file: "/datasets/EuRoC/calibration/euroc_mono.yaml"
+#nr_seqs: 11
+
+dataset: 'tum'
+dataset_dir: "/datasets/TUM-RGBD"
+svo_calib_file: "/datasets/TUM-RGBD/calibration/tum.yaml"
+svo_params_file: "<path>/vo-rl/svo-lib/svo_env/param/tartan_test.yaml"
+nr_seqs: 9

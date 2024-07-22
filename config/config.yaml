@@ -1,0 +1,42 @@
+# Deactivate hydra logging
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+# End Deactivate hydra logging
+
+wandb_logging: True
+wandb_tag: <Tag>
+wandb_group: <group>
+log_path: /logs/log_voRL/training
+n_envs: 100
+seed: 0
+total_timesteps: 25e6
+
+val_interval: 10
+
+dataset_dir: <path>
+vo_algorithm: "SVO"
+svo_params_file: "<path>/vo-rl/svo-lib/svo_env/param/tartan_train.yaml"
+svo_calib_file: "/datasets/TartanAir/calibration/tartan_pinhole.yaml"
+policy_path: null  # null if train from scratch
+
+agent:
+  n_epochs: 10
+  gae_lambda: 0.95
+  gamma: 0.6
+  n_steps: 250
+  ent_coef: 0.0025
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  batch_size: 25000
+  use_sde: False
+  reward:
+    align_reward: 0.01
+    keyframe_reward: 0.0001
+    traj_length: 5
+    nr_points_for_align: 3
