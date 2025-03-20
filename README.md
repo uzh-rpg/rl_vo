@@ -81,10 +81,18 @@ The following commands can be used to install the SVO library:
 In addition to the RL framework, there is also a separate dockerfile inside the `svo-lib` directory, which can be used to build the SVO library in a similar way as the RL framework.
 
 ## Datasets
+
+The three datasets used in the paper can be downloaded on the respective websites, see below. 
+In addition to the data from the official websites, each dataset requires a calibration folder with a yaml file containing the camera intrinsics. 
+The yaml file can be separately downloaded from the given links below.
+
 ### TartanAir
 The TartanAir dataset can be downloaded here:
 [TartanAir](https://theairlab.org/tartanair-dataset/)
 To speed up the dataloading, we convert the RGB images of the `image_left` directory to grayscale images.
+
+The corresponding yaml file containing the camera intrinsics can be downloaded [here](https://download.ifi.uzh.ch/rpg/ECCV24_VORL/tartan_pinhole.yaml).
+It should be placed inside a directory called `calibration`.
 
 The dataset should have the following structure:
 ```
@@ -96,11 +104,17 @@ TartanAir/
 │   │   │   │   ├── 000000_left.jpg
 │   │   │   │   ├── ...
 │   │   │   ├── pose_left.txt
+├──  ...
+├── calibration
+│   ├── tartan_pinhole.yaml
 ```
 
 ### EuRoC
 The EuRoC dataset can be downloaded here:
 [EuRoC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
+
+The corresponding yaml file containing the camera intrinsics can be downloaded [here](https://download.ifi.uzh.ch/rpg/ECCV24_VORL/euroc_mono.yaml).
+It should be placed inside a directory called `calibration`.
 
 The dataset should have the following structure:
 ```
@@ -115,11 +129,17 @@ EuRoC/
 │   │   ├── state_groundtruth_estimate0/
 │   │   │   ├── data.csv
 │   │   │   ├── sensor.yaml
+├──  ...
+├── calibration
+│   ├── euroc_mono.yaml
 ```
 
 ### TUM-RGBD
 The TUM-RGBD dataset can be downloaded here:
 [TUM-RGBD](https://vision.in.tum.de/data/datasets/rgbd-dataset/download)
+
+The corresponding yaml file containing the camera intrinsics can be downloaded [here](https://download.ifi.uzh.ch/rpg/ECCV24_VORL/tum.yaml).
+It should be placed inside a directory called `calibration`.
 
 The dataset should have the following structure:
 ```
@@ -130,6 +150,9 @@ TUM-RGBD/
 │   ├── rgb/
 │   │   ├── 1305031452.791720.png
 │   │   ├── ...
+├──  ...
+├── calibration
+│   ├── tum.yaml
 ```
 
 ## Training
